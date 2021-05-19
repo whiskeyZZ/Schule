@@ -8,7 +8,9 @@ namespace Schule
         {
             //AufgabeSechs();
             //Stromkosten();
-            Tarifoptimierer();
+            //Tarifoptimierer();
+            //AufgabeZehn();
+            AufgabeElf();
         }
 
         static void AufgabeSechs()
@@ -89,6 +91,46 @@ namespace Schule
             }
             else {
                 Console.Write("Beide Tarife sind gleich gut");
+            }
+
+        }
+
+        static void AufgabeZehn(){
+            double betrag = 20000;
+            double cent = 0.01;
+            int laufzeit = 21;
+
+            for (int i= 0; i < laufzeit; i++){
+                cent = cent * 2;
+                Console.Write("Tag {0}: {1}", laufzeit, cent);
+            }
+
+            if (betrag > cent){
+                Console.Write("Option a) ist besser");
+            }
+            else {
+                Console.Write("Option b) ist besser");
+            }
+        }
+
+        static void AufgabeElf(){
+            string pin = "1234";
+            int versuche = 0;
+
+            while (versuche < 3){
+                string eingabe = Console.ReadLine();
+
+                if (pin == eingabe){
+                    Console.WriteLine("Jetzt können sie Geld abheben");
+                    break;
+                }
+                else {
+                    versuche++;
+                    if (versuche == 3){
+                        Console.WriteLine("Die Karte wurde eingezogen.");
+                    }
+                }
+
             }
 
         }
